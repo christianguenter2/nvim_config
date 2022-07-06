@@ -48,6 +48,10 @@ set nobackup
 set nowritebackup
 set signcolumn=no
 set undofile
+set wildmode=longest,list
+set cursorline
+set cursorlineopt=screenline
+"set cursorcolumn
 
 nnoremap <leader>wm :MaximizerToggle<CR>
 nnoremap <leader>wn :wincmd j<CR>
