@@ -78,6 +78,7 @@ EOF
 
 nnoremap <leader>t :NvimTreeToggle<CR>
 
+nnoremap <silent> <leader>gg :LazyGit<CR>
 
 let mapleader=','
 
