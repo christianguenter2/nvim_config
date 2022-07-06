@@ -60,6 +60,14 @@ vnoremap <CR> :
 
 inoremap <C-T> <C-N>
 
+nnoremap <C-CR> O<Esc>j
+nnoremap <M-CR> o<Esc>k
+nnoremap <M-V> <C-V>
+nnoremap d- d$
+nnoremap v- v$
+nnoremap c- c$
+nnoremap y- y$
+nnoremap v <C-V>
 
 nnoremap <esc> :noh<CR><esc>
 vnoremap <esc> :noh<CR><esc>
