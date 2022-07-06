@@ -88,6 +88,10 @@ nnoremap <leader>t :NvimTreeToggle<CR>
 
 nnoremap <silent> <leader>gg :LazyGit<CR>
 
+" Fast search and replace
+nnoremap <leader>s :%s///g<LEFT><LEFT><LEFT>
+vnoremap <leader>s :s///g<LEFT><LEFT><LEFT>
+
 let mapleader=','
 
 map <space> <leader>
