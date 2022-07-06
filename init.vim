@@ -17,7 +17,11 @@ call plug#begin('C:/Users/christian.guenter/AppData/Local/nvim/plugged')
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
 
+  Plug 'tpope/vim-fugitive'
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'kyazdani42/nvim-tree.lua'
   Plug 'folke/zen-mode.nvim'
+  Plug 'kdheepak/lazygit.nvim'
 
   Plug 'jiangmiao/auto-pairs' 
   Plug 'neoclide/coc.nvim', {'do' : 'yarn install --frozen-lockfile'}
@@ -66,6 +70,14 @@ vnoremap <C-C> :noh<CR><C-C>
 "easier moving of code block,w,ws
 vnoremap < <gv 
 vnoremap > >gv 
+
+" nvim tree
+lua << EOF
+ require("nvim-tree").setup() 
+EOF
+
+nnoremap <leader>t :NvimTreeToggle<CR>
+
 
 let mapleader=','
 
