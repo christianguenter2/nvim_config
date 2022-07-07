@@ -9,6 +9,7 @@ call plug#begin('C:/Users/christian.guenter/AppData/Local/nvim/plugged')
   Plug 'famiu/nvim-reload'
   Plug 'tpope/vim-surround'
   Plug 'vim-airline/vim-airline'
+  Plug 'kien/ctrlp.vim'
 
   Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/cmp-nvim-lsp'
@@ -22,6 +23,8 @@ call plug#begin('C:/Users/christian.guenter/AppData/Local/nvim/plugged')
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'folke/zen-mode.nvim'
   Plug 'kdheepak/lazygit.nvim'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'easymotion/vim-easymotion'
 
   Plug 'jiangmiao/auto-pairs' 
   Plug 'neoclide/coc.nvim', {'do' : 'yarn install --frozen-lockfile'}
@@ -52,12 +55,24 @@ set wildmode=longest,list
 set cursorline
 set cursorlineopt=screenline
 "set cursorcolumn
+set signcolumn=no
+set textwidth=0
+set nowrap
 
 nnoremap <leader>wm :MaximizerToggle<CR>
+
 nnoremap <leader>wn :wincmd j<CR>
 nnoremap <leader>wh :wincmd h<CR>
 nnoremap <leader>we :wincmd k<CR>
 nnoremap <leader>wi :wincmd l<CR>
+
+nnoremap <leader>wN :wincmd J<CR>
+nnoremap <leader>wE :wincmd K<CR>
+nnoremap <leader>wH :wincmd H<CR>
+nnoremap <leader>wI :wincmd L<CR>
+
+nnoremap <leader>ww :w!<CR>
+nnoremap <leader>W :w!<CR>
 
 nnoremap <CR> :
 vnoremap <CR> :
@@ -72,6 +87,7 @@ nnoremap v- v$
 nnoremap c- c$
 nnoremap y- y$
 nnoremap v <C-V>
+nnoremap <leader>q :q<CR>
 
 nnoremap <esc> :noh<CR><esc>
 vnoremap <esc> :noh<CR><esc>
@@ -79,9 +95,26 @@ vnoremap <esc> :noh<CR><esc>
 nnoremap <C-C> :noh<CR><C-C>
 vnoremap <C-C> :noh<CR><C-C>
 
+nnoremap <leader>/ ^
+vnoremap <leader>/ ^
+nnoremap <leader>- $
+vnoremap <leader>- $
+
 "easier moving of code block,w,ws
 vnoremap < <gv 
 vnoremap > >gv 
+
+" paste from yank register
+nnoremap <leader>p "0p
+nnoremap <leader>P "0P
+
+vnoremap <leader>p "0p
+vnoremap <leader>P "0P
+
+nnoremap U <C-R>
+vnoremap U <C-R>
+
+nnoremap Y y$
 
 " nvim tree
 lua << EOF
@@ -89,6 +122,7 @@ lua << EOF
 EOF
 
 nnoremap <leader>t :NvimTreeToggle<CR>
+nnoremap <leader>T :vs<CR>:terminal<CR>
 
 nnoremap <silent> <leader>gg :LazyGit<CR>
 
