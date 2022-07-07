@@ -74,10 +74,16 @@ nnoremap <leader>wI :wincmd L<CR>
 nnoremap <leader>ww :w!<CR>
 nnoremap <leader>W :w!<CR>
 
+vnoremap <leader>ww :w!<CR>
+vnoremap <leader>W :w!<CR>
+
 nnoremap <CR> :
 vnoremap <CR> :
 
 inoremap <C-T> <C-N>
+
+" Goto last change
+nnoremap <leader>g g,
 
 nnoremap <C-CR> O<Esc>j
 nnoremap <M-CR> o<Esc>k
@@ -129,6 +135,20 @@ nnoremap <silent> <leader>gg :LazyGit<CR>
 " Fast search and replace
 nnoremap <leader>s :%s///g<LEFT><LEFT><LEFT>
 vnoremap <leader>s :s///g<LEFT><LEFT><LEFT>
+
+" Easymotion
+" <Leader>f{char} to move to {char}
+map  <leader>f <Plug>(easymotion-bd-f)
+nmap <leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+nmap S <Plug>(easymotion-overwin-f)
+
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade  Comment
+hi link EasyMotionTarget2First MatchParen
+hi link EasyMotionTarget2Second MatchParen
 
 let mapleader=','
 
